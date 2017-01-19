@@ -1,0 +1,38 @@
+#archive-page {
+  margin-bottom: @gap * 2;
+  .archive {
+    position: relative;
+    padding: @gap;
+    .archive-item {
+      position: relative;
+
+      a {
+        display: inline-block;
+        padding:0 5px;
+        color: @black;
+        border-left: 3px solid transparent;
+        background: transparent;
+        transition: all ease 0.24s;
+
+        &:hover {
+          border-left-color: lighten(@accent-color,10%);
+          background: lighten(@background-color,2%);
+        }
+      }
+    }
+    .archive-year {
+      font-size: 16px;
+      margin: 10px 0px;
+    }
+    .archive-post {
+      time {
+        font-size: 12px;
+        padding-right: 10px;
+      }
+      .title {
+        font-size: 14px;
+        color: @accent-color;
+      }
+    }
+  }
+}

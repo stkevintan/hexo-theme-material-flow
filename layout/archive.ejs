@@ -1,0 +1,50 @@
+<% if (page.year || page.month) { %>
+	<%- partial('_partial/archive') %>
+<% } else { %>
+  <article id="archive-page"
+    class="post article white-box">
+    <h2 class="title">
+        Archives
+    </h2>
+    <section class="archive">
+      <%
+        var year = -1, postid = -1;
+        site.posts.sort('date').each(function(post) {
+          post.year = date(post.date, 'YYYY');
+          if (post.year && post.year !== year) {
+            year = post.year;
+      %>
+            <h3 class="archive-item archive-year">
+              <a id="archive-year-<%= year %>" href="/archives/<%= year %>/">
+                <%= year %>
+              </a>
+            </h3>
+      <%  } %>
+          <div class="archive-item archive-post">
+            <a href="<%= url_for(post.path) %>">
+              <time><%= date(post.date, 'MM-DD') %></time>
+              <span class="title"><%= post.title %></span>
+            </a>
+          </div>
+      <% }); %>
+    </section>
+  </article>
+  <!--
+  <% if (page.total > 1) { %>
+    <nav id="page-nav">
+      <% if (page.prev != 0) { %>
+      <a class="prev" rel="prev" href="<%= url_for(page.prev_link) %>">
+        <span class="icon icon-chevron-left"></span>
+        <span class="text">Previous</span>
+      </a>
+      <% } %>
+      <% if (page.next != 0) { %>
+      <a class="next" rel="next" href="<%= url_for(page.next_link) %>">
+        <span class="text">Next</span>
+        <span class="icon icon-chevron-right"></span>
+      </a>
+      <% } %>
+    </nav>
+  <% } %>
+    -->
+<% } %>
