@@ -1,5 +1,7 @@
 <section class='m_widget about'>
-<img class='avatar waves-image' src='/images/avatar.jpe' />
+<% if(config.avatar) { %>
+<img class='avatar waves-image' src='<%=config.avatar %>' />
+<%} %>
 <div class='header'><%=config.author %></div>
 <div class='content'>
 <div id='hitokoto'></div>
