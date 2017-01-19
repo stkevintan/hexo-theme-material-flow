@@ -1,6 +1,6 @@
 # Material Flow
 
-Yet Another Material Design Blog Theme.
+Yet Another Material-Design-Style Hexo Theme.
 
 [DEMO](http://keyin.me)
 
@@ -17,10 +17,16 @@ cd /your_blog_dir/themes/
 git clone https://github.com/stkevintan/hexo-theme-material-flow material-flow
 ```
 
-Change the value of `theme` to material-flow in your global `_config.yml`.
+## After Downloading
+
+1. Change the value of `theme` to material-flow in your global `_config.yml`.
+2. Put your avatar && favicon  images to `/source/images/`
+3. Then ... go to `Settings`
+
 
 
 ## Settings
+
 There are 3 configuration places you should concerned:
 
 ### `_config.yml`  
