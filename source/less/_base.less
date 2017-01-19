@@ -264,7 +264,7 @@ ul.h-list{
 .container{
   position:relative;
   width:100%;
-  max-width: 1200px;
+  max-width: @container-width;
   margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
@@ -282,6 +282,9 @@ ul.h-list{
   @media(max-width: @on-phone){
     .container{
       display:block;
+    }
+    .l_main{
+      width: 100%;
     }
     padding: @gap @gap/2 @gap/2;
   }
