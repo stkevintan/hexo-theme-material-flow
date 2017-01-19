@@ -40,8 +40,8 @@ keywords:
   - A_KEYWORD
   - A_KEYWORD
 author: YOUR_NAME
-avatar: images/avatar.jpg  # the avatar image in the sidebar
-favicon: images/favicon.ico # the favicon
+avatar: /images/avatar.jpg  # the avatar image in the sidebar
+favicon: /images/favicon.ico # the favicon
 language: zh-CN
 timezone: Asia/Shanghai
 
