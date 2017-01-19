@@ -118,9 +118,9 @@ feed:
 ```
 
 ## `source/_data/`
-The global config file's location. Following 3 configuration files are this theme used:
+The site config file directory. Following 3 configuration files are required:
 ### `links.yml` 
-Defines the entries of your friend link, eg:
+Defines the entries of your external link, eg:
 ```yaml
 - name: blog1
   url: https://xxxx.com
@@ -131,7 +131,7 @@ Defines the entries of your friend link, eg:
 ```
 
 ### `menu.yml` 
-Defines the navigation menu of your site's header, eg:
+Defines the navigation menu of the header, eg:
 ```yaml
 - name: Home
   slug: home
@@ -145,7 +145,7 @@ Defines the navigation menu of your site's header, eg:
 ```
 
 ### `widgets.yml`
-Defines the widget to show on your site's sidebar, eg:
+Defines the widget to show in the sidebar, eg:
 ```yaml
 - about
 - friendly-links
