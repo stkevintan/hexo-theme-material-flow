@@ -4,23 +4,20 @@ Yet Another Material-Design-Style Hexo Theme.[DEMO](http://keyin.me)
 
 ![Desktop](https://raw.githubusercontent.com/stkevintan/hexo-theme-material-flow/master/snapshots/desktop.png)
 
-## Install
+## Installation
 ### Dependencies
 ```bash
 cd /your_blog_dir/
 npm i -S hexo-generator-search hexo-generator-feed hexo-renderer-less hexo-autoprefixer
 ```
-### Downloading
+### Downloading Source
 ```bash
 cd /your_blog_dir/themes/
 git clone https://github.com/stkevintan/hexo-theme-material-flow material-flow
 ```
-
-## After Downloading
-
+### Configuration
 1. Change the value of `theme` to material-flow in your global `_config.yml`.
 2. Put your avatar && favicon  images to `/source/images/`
-3. Then ... go to `Settings`
 
 
 
@@ -36,25 +33,21 @@ The global config of your site.
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: World of Forks
-subtitle: My world
-description: A blog of Kevin Tan
+title: YOUR_TITLE
+subtitle: YOUR_SUBTITLE
+description: YOUR_DESC
 keywords:
-  - blog
-  - stkevintan
-  - IT
-  - Web Front End
-  - Kevin Tan
-  - kevinsfork
-author: Kevin Tan
-avatar: images/avatar.jpg # the avatar image in the sidebar
-favicon: images/favicon.ico
+  - A_KEYWORD
+  - A_KEYWORD
+author: YOUR_NAME
+avatar: images/avatar.jpg  # the avatar image in the sidebar
+favicon: images/favicon.ico # the favicon
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://keyin.me
+url: YOUR_SITE
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -167,7 +160,7 @@ The theme config file.
 # Search
 search: 
   enable: true
-  service: hexo # google/hexo/algolia/azure/baidu
+  service: hexo # avaliable options : google/hexo/algolia/azure/baidu
   # google 
   google_api_key:
   google_engine_id:
@@ -189,12 +182,10 @@ less:
 
 # use url, not username
 social:
-- slug: email
-  url: #mailto:stkevintan@zju.edu.cn
 - slug: github
-  url: https://github.com/stkevintan
+  url: https://github.com/YOUR_GITHUB_ID
 - slug: twitter
-  url: https://twitter.com/kevinsfork
+  url: https://twitter.com/YOUR_TWTTIER_ID
 - slug: rss
 	url: /atom.xml
 ```

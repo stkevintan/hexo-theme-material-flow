@@ -23,8 +23,6 @@ less:
 
 # use url, not username
 social:
-- slug: email
-  url: #mailto:your email
 - slug: github
   url: https://github.com/xxxx
 - slug: twitter
