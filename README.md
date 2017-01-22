@@ -8,7 +8,7 @@ Yet Another Material-Design-Style Hexo Theme.[DEMO](http://keyin.me)
 ### Dependencies
 ```bash
 cd /your_blog_dir/
-npm i -S hexo-generator-search hexo-generator-feed hexo-renderer-less hexo-autoprefixer
+npm i -S hexo-generator-search hexo-generator-feed hexo-renderer-less hexo-autoprefixer hexo-generator-json-content
 ```
 ### Downloading Source
 ```bash
