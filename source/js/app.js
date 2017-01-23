@@ -90,12 +90,31 @@ var customSearch;
 		Waves.attach('.waves-image');
 		Waves.init();
 	}
+
+	function setBanner(){
+		var $subnav = $('.subnav');
+		var boxshadow = null;
+		var $header = $('.l_header');
+		$(window).scroll(function(){
+			if($(window).scrollTop() >= 100){
+				boxshadow = boxshadow || $subnav.css('boxShadow');
+				$subnav.css('boxShadow','none');
+				$header.css('boxShadow',boxshadow);
+			}else{
+				boxshadow = boxshadow || $header.css('boxShadow');
+				$subnav.css('boxShadow',boxshadow);
+				$header.css('boxShadow','none');
+			}
+		})
+	}
 	$(function() {
 		//set header
 		setHeaderMenu();
 		setHeaderMenuPhone();
 		setHeaderSearch();
 		setWaves();
+		//setBanner();
+
 		$('.window-nav, .go-comment').on('click', scrolltoElement);
     $(".article .video-container").fitVids();
 

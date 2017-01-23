@@ -111,18 +111,8 @@
     font-size: 1em;
     margin: 20px 0px;
     padding: 10px 15px;
-    background-color: @code-background-color;
     white-space: pre;
     overflow: auto;
-
-	  code {
-			color: @black;
-			margin: 0;
-			font-size: 1em;
-			background: transparent;
-			border: 0;
-			white-space: inherit;
-		}
 		figure {
 			margin: 0px;
 		}
@@ -185,13 +175,16 @@
     margin-top: @gap;
     background: @qoute-background-color;
     &:before{
-      content:"";
-      position: absolute;
-      top: 0;
-      left:0;
-      width: 2px;
-      height: 100%;
-      background:@secondary-color;
+      content:"TAGS : ";
+      // position: absolute;
+      // top: 0;
+      // left:0;
+      // width: 2px;
+      // height: 100%;
+      // background:@secondary-color;
+    }
+    &.article-tags{
+      background: transparent;
     }
 		a {
       position:relative;

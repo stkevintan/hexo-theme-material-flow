@@ -17,7 +17,7 @@
     	<%- post.content %>
   	</div>
 	  <% if (post.tags && post.tags.length) { %>
-	  <div class="article-tags tags h-padding">
+	  <div class="article-tags tags">
       <% post.tags.each(function(item){ %>
         <a href="<%- url_for(item.path) %>"><%=item.name %></a>
       <%})%>
