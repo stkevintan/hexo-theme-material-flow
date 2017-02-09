@@ -37,7 +37,7 @@ var SearchService = "";
         'azure': {logo: 'azure.svg', url: 'https://azure.microsoft.com/en-us/services/search/'},
         'baidu': {logo: 'baidu.svg', url: 'http://zn.baidu.com/cse/home/index'}
       },
-      imagePath: "/img/"
+      imagePath: ROOT + "img/"
     }, options);
 
     self.dom = {};
@@ -260,7 +260,7 @@ var AlgoliaSearch;
       $.each(data, function(index, row) {
         var url = row.permalink || row.path || "";
         if (!row.permalink && row.path) {
-          url = "/" + url;
+          url = ROOT + url;
         }
         var title = row.title;
         var digest = row._highlightResult.excerptStrip.value || "";
@@ -649,7 +649,8 @@ var HexoSearch;
   HexoSearch = function(options) {
     SearchService.apply(this, arguments);
     var self = this;
-    self.config.endpoint = (options||{}).endpoint || "/content.json";
+    self.config.endpoint = ROOT + ((options||{}).endpoint || "content.json");
+    self.config.endpoint = self.config.endpoint.replace("//","/"); //make sure the url is correct
     self.cache = "";
     
     /**

@@ -15,7 +15,7 @@
             year = post.year;
       %>
             <h3 class="archive-item archive-year">
-              <a id="archive-year-<%= year %>" href="/archives/<%= year %>/">
+              <a id="archive-year-<%= year %>" href='<%= url_for("/archives/" + year + "/") %>' >
                 <%= year %>
               </a>
             </h3>

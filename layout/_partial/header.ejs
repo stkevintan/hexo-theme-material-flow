@@ -1,13 +1,13 @@
 <header class="l_header">
 		<div class="wrapper container">
-			<a class="logo flat-box" href="/">
+			<a class="logo flat-box" href='<%= url_for("/") %>' >
 				<%- config.title %>
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
 					<% (site.data.menu||[]).forEach(function(value){ %>
 						<li>
-							<a class='flat-box nav-<%=value.slug%>' href='<%=value.url%>'>
+							<a class='flat-box nav-<%=value.slug%>' href='<%=url_for(value.url)%>'>
 								<%=value.name%>
 							</a>
 						</li>
@@ -34,7 +34,7 @@
 			<nav>
 				<% (site.data.menu||[]).forEach(function(value, key) {
 							if (value.url && value.slug && value.name) { %>
-					<a href="<%= value.url %>" class="nav-<%= value.slug %> nav">
+					<a href="<%= url_for(value.url) %>" class="nav-<%= value.slug %> nav">
 						<%= value.name %>
 					</a>
 				<% } }); %>

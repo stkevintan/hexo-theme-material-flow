@@ -1,12 +1,19 @@
 .l_main {
 	flex:1 1 auto;
-	width: ~"calc(100% - @{side-width} - @{gap})";
+	width: ~"calc(100% - @{side-width} - @{gap})"; //fix for firefox
 	.post-list {
 		position: relative;
 		margin: 0px auto;
-		columns: 400px;
-		column-gap:0;
+	-webkit-columns: 400px;
+		 -moz-columns: 400px;
+					columns: 400px;
+		-webkit-column-gap:0;
+		   -moz-column-gap:0;
+		        column-gap:0;
 		margin: -@gap /2;
+		@media(max-width: @on-phone){
+			margin: 0;
+		}
 	}
 	.page-header {
 		margin: 0px auto 20px auto;
