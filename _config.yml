@@ -29,3 +29,7 @@ social:
   url: https://twitter.com/xxxx
 - slug: rss
   url: /atom.xml
+
+
+#  Add Google analytics tracking ID here
+# google_analytics: 
