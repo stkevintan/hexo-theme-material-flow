@@ -50,7 +50,7 @@ body {
 }
 
 .z-depth-0 {
-	box-shadow: none !important;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
 
 .z-depth-1 {
@@ -223,9 +223,32 @@ img{
     line-height: 44px;
   }
 }
-ul{
-  list-style: none;
+
+.txt-ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul,ol{
   padding-left:0;
+}
+li{
+  list-style: none;
+}
+.mark{
+  position: relative;
+  a {
+    display: inline-block;
+    padding:0 8px;
+    color: @black;
+    border-left: 3px solid transparent;
+    background: transparent;
+    transition: all ease 0.24s;
+    &:hover {
+      border-left-color: @accent-color;
+      background: lighten(@background-color,2%);
+    }
+  }
 }
 ul.h-list{
   display: flex;
@@ -265,7 +288,7 @@ ul.h-list{
 
 .l_body{
   position:relative;
-  padding: 2 * @gap @gap @gap;
+  padding: 2 * @gap 0 @gap;
   .container{
     align-items: stretch;
   }
@@ -280,4 +303,6 @@ ul.h-list{
     padding: @gap @gap/2 @gap/2;
   }
 }
-
+.reveal{
+  visibility: hidden;
+}

@@ -2,7 +2,7 @@
 
 Yet Another Material-Design-Style Hexo Theme.[DEMO](http://keyin.me)  
 
-![Desktop](https://raw.githubusercontent.com/stkevintan/hexo-theme-material-flow/master/snapshots/desktop.png)
+![Desktop](https://raw.githubusercontent.com/stkevintan/hexo-theme-material-flow/master/snapshots/desktopv2.png)
 
 ## Installation
 ### Dependencies

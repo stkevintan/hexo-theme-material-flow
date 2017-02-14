@@ -1,11 +1,11 @@
 <% if (page.year || page.month) { %>
 	<%- partial('_partial/archive') %>
 <% } else { %>
+  <section class="page-header category banner waves-image">
+    <h1 id='hitokoto'></h1>
+  </section>
   <article id="archive-page"
     class="post article white-box">
-    <h2 class="title">
-        Archives
-    </h2>
     <section class="archive">
       <%
         var year = -1, postid = -1;
@@ -14,13 +14,13 @@
           if (post.year && post.year !== year) {
             year = post.year;
       %>
-            <h3 class="archive-item archive-year">
+            <div class="archive-item archive-year mark">
               <a id="archive-year-<%= year %>" href='<%= url_for("/archives/" + year + "/") %>' >
                 <%= year %>
               </a>
-            </h3>
+            </div>
       <%  } %>
-          <div class="archive-item archive-post">
+          <div class="archive-item archive-post mark">
             <a href="<%= url_for(post.path) %>">
               <time><%= date(post.date, 'MM-DD') %></time>
               <span class="title"><%= post.title %></span>

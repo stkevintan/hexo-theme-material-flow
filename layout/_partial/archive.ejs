@@ -1,21 +1,20 @@
 <% if (is_tag()) { %>
-	<section class="page-header tag">
+	<section class="page-header tag banner waves-image">
     <h1>Tag : <span><%= page.tag %></span></h1>
   </section>
-<% } %>
-
-<% if (is_archive()) { %>
-	<section class="page-header archive">
+<% } else if (is_archive()) { %>
+	<section class="page-header archive banner waves-image">
     <h1>Year : <span><%= page.year %><%= page.month ? '.' + page.month : '' %></span></h1>
   </section>
-<% } %>
-
-<% if (is_category()) { %>
-	<section class="page-header category">
+<% } else if (is_category()) { %>
+	<section class="page-header category banner waves-image">
     <h1>Category : <span><%= page.category %></span></h1>
   </section>
+<% } else { %>
+  <section class="page-header category banner waves-image">
+    <h1 id='hitokoto'></h1>
+  </section>
 <% } %>
-
 <section class="post-list">
 	<% page.posts.each(function(post){ %>
     <div class='post-wrapper'>

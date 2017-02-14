@@ -1,4 +1,3 @@
-<script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
 <% if (config.disqus_shortname){ %>
 <script>
   var disqus_shortname = '<%= config.disqus_shortname %>';
@@ -17,6 +16,7 @@
 
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
 <%- js('js/jquery.fitvids.js') %>
 <script>
 	var GOOGLE_CUSTOM_SEARCH_API_KEY = "<%- theme.search.google_api_key %>";
@@ -30,6 +30,7 @@
   var BAIDU_API_ID = "<%- theme.search.baidu_api_id %>";
   var SEARCH_SERVICE = "<%- theme.search.service %>";
   var ROOT = "<%- config.root %>"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
 </script>
 <%- js('js/search.js') %>
 <%- js('js/app.js') %>

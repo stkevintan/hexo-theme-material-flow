@@ -1,4 +1,4 @@
-<article class="post <%= (post.title) ? "" : "no-title" %>">
+<article class="post reveal<%= (post.title) ? "" : "no-title" %>">
   <section class="meta">
     <% if (post.title) { %>
     <h2 class="title">
@@ -22,7 +22,7 @@
     <% } %>
     
     <% if (post.tags && post.tags.length) { %>
-	  <div class="full-width tags">
+	  <div class="full-width auto-padding tags">
       <% post.tags.each(function(item){ %>
         <a href="<%- url_for(item.path) %>"><%=item.name %></a>
       <%})%>

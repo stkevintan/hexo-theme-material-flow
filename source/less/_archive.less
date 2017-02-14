@@ -3,33 +3,28 @@
   .archive {
     position: relative;
     padding: @gap;
-    .archive-item {
-      position: relative;
-
-      a {
-        display: inline-block;
-        padding:0 5px;
-        color: @black;
-        border-left: 3px solid transparent;
-        background: transparent;
-        transition: all ease 0.24s;
-
-        &:hover {
-          border-left-color: lighten(@accent-color,10%);
-          background: lighten(@background-color,2%);
-        }
-      }
-    }
     .archive-year {
       font-size: 16px;
       margin: 10px 0px;
+      a{
+        color: @black;
+      }
     }
     .archive-post {
+      a{
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
       time {
+        color: @black;
+        flex:none;
         font-size: 12px;
         padding-right: 10px;
       }
       .title {
+        flex:auto;
         font-size: 14px;
         color: @accent-color;
       }
