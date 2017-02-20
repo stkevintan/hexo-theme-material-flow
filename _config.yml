@@ -33,3 +33,6 @@ social:
 
 #  Add Google analytics tracking ID here
 # google_analytics: 
+
+# Enable or disable quotes under avatar image
+enable_quotes: true

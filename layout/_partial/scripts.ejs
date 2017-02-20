@@ -1,4 +1,8 @@
-<script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
+
+<% if (theme.enable_quotes){ %>
+  <script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script>
+<% } %>
+
 <% if (config.disqus_shortname){ %>
 <script>
   var disqus_shortname = '<%= config.disqus_shortname %>';
