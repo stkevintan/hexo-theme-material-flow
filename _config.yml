@@ -24,11 +24,9 @@ less:
 # use url, not username
 social:
 - slug: github
-  url: https://github.com/xxxx
+  url: https://github.com/cacaorick
 - slug: twitter
-  url: https://twitter.com/xxxx
-- slug: rss
-  url: /atom.xml
+  url: https://twitter.com/cacaorick
 
 
 #  Add Google analytics tracking ID here
