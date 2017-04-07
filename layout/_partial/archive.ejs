@@ -10,6 +10,7 @@
 	<section class="page-header category banner waves-image">
     <h1>Category : <span><%= page.category %></span></h1>
   </section>
+<% } else if (is_home()) { %>
 <% } else { %>
   <section class="page-header category banner waves-image">
     <h1 id='hitokoto'></h1>
