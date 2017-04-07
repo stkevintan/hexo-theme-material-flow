@@ -88,9 +88,9 @@ var customSearch;
 		Waves.attach('.waves-image');
 		Waves.init();
 	}
-	function setScrollReveal(){
+	function setScrollReveal() {
 		const $reveal = $('.reveal');
-		if($reveal.length === 0) return; 
+		if ($reveal.length === 0) return;
 		const sr = ScrollReveal();
 		sr.reveal('.reveal');
 	}
@@ -140,29 +140,57 @@ var customSearch;
 	function getPicture() {
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
-		const url = ROOT + 'js/lovewallpaper.json';
+		const url = ROOT + 'js/mybanner.json';
 		$.get(url).done(res => {
 			if (res.data.length > 0) {
 				const index = Math.floor(Math.random() * res.data.length);
+				console.log(res);
 				$banner.css('background-image', 'url(' + res.data[index].big + ')');
 			}
 		})
 	}
 
+	// function getPicture() {
+	// 	const $banner = $('.banner');
+	// 	if ($banner.length === 0) return;
+	// 	const url = ROOT + 'js/lovewallpaper.json';
+	// 	$.get(url).done(res => {
+	// 		if (res.data.length > 0) {
+	// 			const index = Math.floor(Math.random() * res.data.length);
+	// 			$banner.css('background-image', 'url(' + res.data[index].big + ')');
+	// 		}
+	// 	})
+	// }
+
 	function getHitokoto() {
 		const $hitokoto = $('#hitokoto');
-		if($hitokoto.length === 0) return;
+		if ($hitokoto.length === 0) return;
 		const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
-		$('body').append('<script	src="%s"></script>'.replace('%s',url));
+		$('body').append('<script	src="%s"></script>'.replace('%s', url));
 		window.handlerHitokoto = (data) => {
 			$hitokoto
-				.css('color','transparent')
+				.css('color', 'transparent')
 				.text(data.hitokoto)
-			if(data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.source));
-			else if(data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.author));
-			$hitokoto.css('color','white');
+			if (data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.source));
+			else if (data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.author));
+			$hitokoto.css('color', 'white');
 		}
 	}
+
+	// function getHitokoto() {
+	// 	const $hitokoto = $('#hitokoto');
+	// 	if ($hitokoto.length === 0) return;
+	// 	const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
+	// 	$('body').append('<script	src="%s"></script>'.replace('%s', url));
+	// 	window.handlerHitokoto = (data) => {
+	// 		$hitokoto
+	// 			.css('color', 'transparent')
+	// 			.text(data.hitokoto)
+	// 		if (data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.source));
+	// 		else if (data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.author));
+	// 		$hitokoto.css('color', 'white');
+	// 	}
+	// }
 
 	$(function () {
 		//set header
