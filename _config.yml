@@ -35,13 +35,13 @@ social:
 # Banner
 banner: true
 
-# Show Hitokoto in home page
+# Show Hitokoto in home page, if false show subtitle or title
 hitokoto: false
 
-# Use localbanner or lovewallpaper
-localbanner: true
+# Banner image use bannerlist or lovewallpaper
+customimage: true
 
-# Local banner list
+# Banner list
 bannerlist:
 - "/images/banner/k02_03.jpg"
 - "/images/banner/k03_03.jpg" 

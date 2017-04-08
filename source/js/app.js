@@ -138,14 +138,14 @@ var customSearch;
 	}
 
 	function getPicture() {
-		if(LOCALBANNER) {
-			getLocalBanner();
+		if(CUSTOMIMAGE) {
+			getBannerListImage();
 		} else {
 			getLovewallpaper();
 		}
 	}
 
-	function getLocalBanner() {
+	function getBannerListImage() {
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
 		if (BANNERLIST.length > 0) {
