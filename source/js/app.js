@@ -138,9 +138,9 @@ var customSearch;
 	}
 
 	function getPicture() {
-		if (BANNER) {
-			if (CUSTOMIMAGE) {
-				getBannerListImage();
+		if (BANNER_IMAGE) {
+			if (BANNER_CUSTOMIMAGE) {
+				getListImage();
 			} else {
 				getLovewallpaper();
 			}
@@ -149,12 +149,12 @@ var customSearch;
 		}
 	}
 
-	function getBannerListImage() {
+	function getListImage() {
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
-		if (BANNERLIST.length > 0) {
-			const index = Math.floor(Math.random() * BANNERLIST.length);
-			$banner.css('background-image', 'url(' + BANNERLIST[index] + ')');
+		if (BANNER_IMAGELIST.length > 0) {
+			const index = Math.floor(Math.random() * BANNER_IMAGELIST.length);
+			$banner.css('background-image', 'url(' + BANNER_IMAGELIST[index] + ')');
 		}
 	}
 
@@ -179,7 +179,7 @@ var customSearch;
 	function getHitokoto() {
 		const $hitokoto = $('#hitokoto');
 		if ($hitokoto.length === 0) return;
-		if (HITOKOTO) {
+		if (BANNER_HITOKOTO) {
 			const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
 			$('body').append('<script	src="%s"></script>'.replace('%s', url));
 			window.handlerHitokoto = (data) => {
@@ -191,7 +191,7 @@ var customSearch;
 				$hitokoto.css('color', 'white');
 			}
 		} else {
-			$hitokoto.text(BANNERTITLE);
+			$hitokoto.text(BANNER_TITLE);
 		}
 	}
 

@@ -33,17 +33,16 @@ social:
 # google_analytics: 
 
 # Banner
-banner: true
-
-# Show Hitokoto in home page, if false show subtitle or title
-hitokoto: false
-
-# Banner image use bannerlist or lovewallpaper
-customimage: true
-
-# Banner list
-bannerlist:
-- "/images/banner/k02_03.jpg"
-- "/images/banner/k03_03.jpg" 
-- "/images/banner/w6_1920x1080.jpg"
-- "/images/banner/w12_1920x1080.jpg"
+banner:
+  # Show image in banner
+  image: true
+  # Show Hitokoto in home page, if false show subtitle or title
+  hitokoto: true
+  # Banner image use bannerlist or lovewallpaper
+  customimage: false
+  # Banner image list
+  imagelist:
+  - "/images/banner/k02_03.jpg"
+  - "/images/banner/k03_03.jpg" 
+  - "/images/banner/w6_1920x1080.jpg"
+  - "/images/banner/w12_1920x1080.jpg"
