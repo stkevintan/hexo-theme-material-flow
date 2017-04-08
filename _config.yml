@@ -37,9 +37,9 @@ banner:
   # Show image in banner
   image: true
   # Show Hitokoto in home page, if false show subtitle or title
-  hitokoto: true
+  hitokoto: false
   # Banner image use imagelist or lovewallpaper
-  customimage: false
+  customimage: true
   # Banner image list
   imagelist:
   - "/images/banner/k02_03.jpg"
