@@ -31,3 +31,19 @@ social:
 
 #  Add Google analytics tracking ID here
 # google_analytics: 
+
+# Banner
+banner: true
+
+# Show Hitokoto in home page
+hitokoto: false
+
+# Use localbanner or lovewallpaper
+localbanner: true
+
+# Local banner list
+bannerlist:
+- "/images/banner/k02_03.jpg"
+- "/images/banner/k03_03.jpg" 
+- "/images/banner/w6_1920x1080.jpg"
+- "/images/banner/w12_1920x1080.jpg"

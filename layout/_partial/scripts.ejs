@@ -31,6 +31,11 @@
   var SEARCH_SERVICE = "<%- theme.search.service %>";
   var ROOT = "<%- config.root %>"||"/";
   if(!ROOT.endsWith('/'))ROOT += '/';
+  var BANNER = "<%- theme.banner %>" == "true";
+  var HITOKOTO = "<%- theme.hitokoto %>" == "true";
+  var BANNERTITLE = "<%- config.subtitle %>"||"<%- config.title %>";
+  var LOCALBANNER = "<%- theme.localbanner %>" == "true";
+  var BANNERLIST = "<%- theme.bannerlist %>".split(',');
 </script>
 <%- js('js/search.js') %>
 <%- js('js/app.js') %>
