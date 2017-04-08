@@ -138,10 +138,14 @@ var customSearch;
 	}
 
 	function getPicture() {
-		if(CUSTOMIMAGE) {
-			getBannerListImage();
+		if (BANNER) {
+			if (CUSTOMIMAGE) {
+				getBannerListImage();
+			} else {
+				getLovewallpaper();
+			}
 		} else {
-			getLovewallpaper();
+			setNoimageBanner();
 		}
 	}
 
@@ -164,6 +168,12 @@ var customSearch;
 				$banner.css('background-image', 'url(' + res.data[index].big + ')');
 			}
 		})
+	}
+
+	function setNoimageBanner() {
+		const $banner = $('.banner');
+		if ($banner.length === 0) return;
+		$banner.addClass('noimage');
 	}
 
 	function getHitokoto() {
@@ -195,6 +205,7 @@ var customSearch;
 		setTocToggle();
 		getHitokoto();
 		getPicture();
+
 		$(".article .video-container").fitVids();
 
 		setTimeout(function () {
