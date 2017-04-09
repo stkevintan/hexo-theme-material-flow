@@ -40,7 +40,7 @@ banner:
   # Show Hitokoto in home page, if false show subtitle or title
   hitokoto: true
   # Banner image use imagelist or lovewallpaper
-  customimage: true
+  customimage: false
   # Banner image list
   imagelist:
   - http://i.imgur.com/UieUlMQ.jpg
