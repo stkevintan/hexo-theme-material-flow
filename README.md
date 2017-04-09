@@ -4,26 +4,6 @@ Yet Another Material-Design-Style Hexo Theme.[DEMO](http://keyin.me)
 
 ![Desktop](https://raw.githubusercontent.com/stkevintan/hexo-theme-material-flow/master/snapshots/desktopv2.png)
 
-## 自己改的東西
-### 設定首頁 Title
-更改 Hexo `_config.yml` 的 `subtitle`
-
-### 自訂 Banner 圖檔
-Banner 圖檔丟到
-`source/images/banner/`
-
-編輯 `source/images/banner/list.json`
-
-例如
-```json
-  {"image": [
-    "/images/banner/k02_03.jpg",
-    "/images/banner/k03_03.jpg", 
-    "/images/banner/w6_1920x1080.jpg", 
-    "/images/banner/w12_1920x1080.jpg"
-  ]}
-```
-
 ## Installation
 ### Dependencies
 ```bash
