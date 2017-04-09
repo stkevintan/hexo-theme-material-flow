@@ -24,10 +24,11 @@ less:
 # use url, not username
 social:
 - slug: github
-  url: https://github.com/cacaorick
+  url: https://github.com/xxxx
 - slug: twitter
-  url: https://twitter.com/cacaorick
-
+  url: https://twitter.com/xxxx
+- slug: rss
+  url: /atom.xml
 
 #  Add Google analytics tracking ID here
 # google_analytics: 
@@ -37,12 +38,10 @@ banner:
   # Show image in banner
   image: true
   # Show Hitokoto in home page, if false show subtitle or title
-  hitokoto: false
+  hitokoto: true
   # Banner image use imagelist or lovewallpaper
   customimage: true
   # Banner image list
   imagelist:
-  - "/images/banner/k02_03.jpg"
-  - "/images/banner/k03_03.jpg" 
-  - "/images/banner/w6_1920x1080.jpg"
-  - "/images/banner/w12_1920x1080.jpg"
+  - http://i.imgur.com/UieUlMQ.jpg
+  - http://i.imgur.com/nURzHwR.jpg
