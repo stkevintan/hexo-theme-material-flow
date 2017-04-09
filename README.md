@@ -187,9 +187,25 @@ social:
 - slug: twitter
   url: https://twitter.com/YOUR_TWTTIER_ID
 - slug: rss
-	url: /atom.xml
+  url: /atom.xml
+
+#  Add Google analytics tracking ID here
+# google_analytics: 
+
+# Banner
+banner:
+  # Show image in banner
+  image: true
+  # Show Hitokoto in home page banner, if false will display subtitle or title
+  hitokoto: true
+  # Banner image use imagelist or lovewallpaper
+  customimage: false
+  # Banner image list
+  imagelist:
+  - http://i.imgur.com/xxx1.jpg
+  - http://i.imgur.com/xxx2.jpg
+  - /images/banner/xxx3.png # themes/material-flow/source/images/banner/xxx3.png
+  - /images/banner/xxx4.png
 ```
-
-
 
 ## Enjoy ;)
