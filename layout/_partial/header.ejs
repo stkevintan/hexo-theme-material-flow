@@ -1,11 +1,12 @@
 <header class="l_header">
-		<div class="wrapper container">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
 			<a class="logo flat-box" href='<%= url_for("/") %>' >
 				<%- config.title %>
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<% (site.data.menu||[]).forEach(function(value){ %>
+					<% (theme.menu||[]).forEach(function(value){ %>
 						<li>
 							<a class='flat-box nav-<%=value.slug%>' href='<%=url_for(value.url)%>'>
 								<%=value.name%>
@@ -25,19 +26,32 @@
 			<% } %>
 			<ul class='switcher h-list'>
 				<% if (theme.search.enable === true) { %>
-					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
 				<% } %>
-				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
 			</ul>
 		</div>
-		<aside class="menu-phone">
-			<nav>
-				<% (site.data.menu||[]).forEach(function(value, key) {
-							if (value.url && value.slug && value.name) { %>
-					<a href="<%= url_for(value.url) %>" class="nav-<%= value.slug %> nav">
-						<%= value.name %>
-					</a>
-				<% } }); %>
-			</nav>
-		</aside>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
 </header>
+<aside class="menu-phone">
+	<nav>
+		<% (theme.menu||[]).forEach(function(value, key) {
+					if (value.url && value.slug && value.name) { %>
+			<a href="<%= url_for(value.url) %>" class="nav-<%= value.slug %> nav">
+				<%= value.name %>
+			</a>
+		<% } }); %>
+	</nav>
+</aside>

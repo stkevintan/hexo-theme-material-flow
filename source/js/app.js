@@ -4,11 +4,46 @@ var customSearch;
 
 	"use strict";
 	const scrollCorrection = 70; // (header height = 50px) + (gap = 20px)
-	function scrolltoElement(a, correction) {
+	function scrolltoElement(elem, correction) {
 		correction = correction || scrollCorrection;
-		$('html, body').animate({ 'scrollTop': $(a.getAttribute('href')).offset().top - correction }, 400);
+		const $elem = elem.href ? $(elem.getAttribute('href')) : $(elem);
+		$('html, body').animate({ 'scrollTop': $elem.offset().top - correction }, 400);
 	};
 
+	function setHeader() {
+		if (!window.subData) return;
+		const $wrapper = $('header .wrapper');
+		const $comment = $('.s-comment', $wrapper);
+		const $toc = $('.s-toc', $wrapper);
+		const $top = $('.s-top',$wrapper);
+
+		$wrapper.find('.nav-sub .logo').text(window.subData.title);
+		let pos = document.body.scrollTop;
+		$(document, window).scroll(() => {
+			const scrollTop = $(window).scrollTop();
+			const del = scrollTop - pos;
+			if (del >= 20) {
+				pos = scrollTop;
+				$wrapper.addClass('sub');
+			} else if (del <= -20) {
+				pos = scrollTop;
+				$wrapper.removeClass('sub');
+			}
+		});
+		// bind events to every btn
+		const $commentTarget = $('#comments');
+		if ($commentTarget.length) {
+			$comment.click(e => { e.preventDefault(); e.stopPropagation(); scrolltoElement($commentTarget); });
+		} else $comment.remove();
+
+		const $tocTarget = $('.toc-wrapper');
+		if ($tocTarget.length && $tocTarget.children().length) {
+			$toc.click((e) => { e.stopPropagation(); $tocTarget.toggleClass('active'); });
+		} else $toc.remove();
+
+		$top.click(()=>scrolltoElement(document.body));
+
+	}
 	function setHeaderMenu() {
 		var $headerMenu = $('header .menu');
 		var $underline = $headerMenu.find('.underline');
@@ -91,17 +126,15 @@ var customSearch;
 	function setScrollReveal() {
 		const $reveal = $('.reveal');
 		if ($reveal.length === 0) return;
-		const sr = ScrollReveal();
+		const sr = ScrollReveal({ distance: 0 });
 		sr.reveal('.reveal');
 	}
 	function setTocToggle() {
-		const $toc = $('.tog');
+		const $toc = $('.toc-wrapper');
 		if ($toc.length === 0) return;
-		$toc.click((e) => {
-			e.stopPropagation();
-			$toc.addClass('active');
-		});
+		$toc.click((e) => { e.stopPropagation(); $toc.addClass('active'); });
 		$(document).click(() => $toc.removeClass('active'));
+
 		$toc.on('click', 'a', (e) => {
 			e.preventDefault();
 			e.stopPropagation();
@@ -137,74 +170,46 @@ var customSearch;
 		scrollListener();
 	}
 
-	function getPicture() {
-		if (BANNER_IMAGE) {
-			if (BANNER_CUSTOMIMAGE) {
-				getListImage();
-			} else {
-				getLovewallpaper();
-			}
-		} else {
-			setNoimageBanner();
-		}
-	}
+	// function getPicture() {
+	// 	const $banner = $('.banner');
+	// 	if ($banner.length === 0) return;
+	// 	const url = ROOT + 'js/lovewallpaper.json';
+	// 	$.get(url).done(res => {
+	// 		if (res.data.length > 0) {
+	// 			const index = Math.floor(Math.random() * res.data.length);
+	// 			$banner.css('background-image', 'url(' + res.data[index].big + ')');
+	// 		}
+	// 	})
+	// }
 
-	function getListImage() {
-		const $banner = $('.banner');
-		if ($banner.length === 0) return;
-		if (BANNER_IMAGELIST.length > 0) {
-			const index = Math.floor(Math.random() * BANNER_IMAGELIST.length);
-			$banner.css('background-image', 'url(' + BANNER_IMAGELIST[index] + ')');
-		}
-	}
+	// function getHitokoto() {
+	// 	const $hitokoto = $('#hitokoto');
+	// 	if($hitokoto.length === 0) return;
+	// 	const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
+	// 	$('body').append('<script	src="%s"></script>'.replace('%s',url));
+	// 	window.handlerHitokoto = (data) => {
+	// 		$hitokoto
+	// 			.css('color','transparent')
+	// 			.text(data.hitokoto)
+	// 		if(data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.source));
+	// 		else if(data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.author));
+	// 		$hitokoto.css('color','white');
+	// 	}
+	// }
 
-	function getLovewallpaper() {
-		const $banner = $('.banner');
-		if ($banner.length === 0) return;
-		const url = ROOT + 'js/lovewallpaper.json';
-		$.get(url).done(res => {
-			if (res.data.length > 0) {
-				const index = Math.floor(Math.random() * res.data.length);
-				$banner.css('background-image', 'url(' + res.data[index].big + ')');
-			}
-		})
-	}
-
-	function setNoimageBanner() {
-		const $banner = $('.banner');
-		if ($banner.length === 0) return;
-		$banner.addClass('noimage');
-	}
-
-	function getHitokoto() {
-		const $hitokoto = $('#hitokoto');
-		if ($hitokoto.length === 0) return;
-		if (BANNER_HITOKOTO) {
-			const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
-			$('body').append('<script	src="%s"></script>'.replace('%s', url));
-			window.handlerHitokoto = (data) => {
-				$hitokoto
-					.css('color', 'transparent')
-					.text(data.hitokoto)
-				if (data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.source));
-				else if (data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s', data.author));
-				$hitokoto.css('color', 'white');
-			}
-		} else {
-			$hitokoto.text(BANNER_TITLE);
-		}
-	}
 
 	$(function () {
 		//set header
+		setHeader();
 		setHeaderMenu();
 		setHeaderMenuPhone();
 		setHeaderSearch();
 		setWaves();
 		setScrollReveal();
 		setTocToggle();
-		getHitokoto();
-		getPicture();
+		// getHitokoto();
+		// getPicture();
+
 
 		$(".article .video-container").fitVids();
 

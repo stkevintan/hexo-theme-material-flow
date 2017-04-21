@@ -13,7 +13,7 @@
 	<%- partial('categories',{post:post}) %>
 	</section>
 	<% if(post.toc!==false){ %>
-		<section class="tog"><%- toc(post.content) %></section>
+		<section class="toc-wrapper"><%- toc(post.content) %></section>
 	<% } %>
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -33,3 +33,9 @@
 		</section>
 	<% } %>
 </article>
+<script>
+	window.subData = {
+		title: '<%= post.title %>',
+		tools: true
+	}
+</script>

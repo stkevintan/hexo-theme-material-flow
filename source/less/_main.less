@@ -1,53 +1,16 @@
 .l_main {
-    flex: 1 1 auto;
-    width:~"calc(100% - @{side-width} - @{gap})"; //fix for firefox
+    width: 100%;
+    padding-right: @side-width + @gap;
+    float: left;
     .post-list {
         position: relative;
         margin: 0px auto;
-        -webkit-columns: 400px;
-        -moz-columns: 400px;
         columns: 400px;
-        -webkit-column-gap: 0;
-        -moz-column-gap: 0;
         column-gap: 0;
         margin: -@gap /2;
         @media(max-width: @on-phone) {
             margin: 0;
         }
-    }
-    .banner {
-        position: relative;
-        display: block;
-        margin: 0px auto @gap;
-        &:extend(.z-depth-1);
-        background: @primary-color;
-        height: @banner-height;
-        width: 100%;
-        background-size: cover;
-        background-position: 50% 20%;
-        h1 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            margin: 0;
-            padding: 0 @gap;
-            width: 100%;
-            min-height: 48px;
-            color: #fff;
-            font-size: 1.2rem;
-            line-height: 2rem;
-            padding: 8px @gap;
-            font-weight: 300;
-            background: fade(#000, 60%);
-            transition: all 0.24s ease-out;
-            cite {
-                font-style: italic;
-                font-size: 0.8em;
-            }
-        }
-    }
-    .banner.noimage {
-        height: 48px;
     }
     #comments {
         position: relative;
@@ -57,20 +20,16 @@
             padding-top: @gap;
         }
     }
-    .post-wrapper,
-    .post-wrapper * {
+    .post-wrapper{
         // for firefox
-        -webkit-column-break-inside: avoid;
-        -moz-column-break-inside: avoid;
         column-break-inside: avoid;
-        page-break-inside: avoid;
         break-inside: avoid-column;
     }
     .mobile-post() {
         .post {
             padding: 1.5 * @gap @gap;
             .meta {
-                text-align: left;
+                margin-bottom: @gap;
                 .title {
                     font-size: @article-title-size-sm;
                 }
@@ -78,6 +37,8 @@
             .full-width {
                 margin-left: -@gap;
                 margin-right: -@gap;
+                padding-left: @gap;
+                padding-right: @gap;
                 width:~"calc(100% + 2 * @{gap})"
             }
             .auto-padding {
@@ -89,7 +50,7 @@
                 margin-left: -@gap;
                 margin-right: -@gap;
                 width:~"calc(100% + 2 * @{gap})";
-                max-width:none;
+                max-width: none;
             }
         }
     }
@@ -112,8 +73,7 @@
         background: white;
         &:extend(.z-depth-1);
         .meta {
-            text-align: center;
-            margin-bottom: @gap;
+            margin-bottom: 2*@gap;
             .title {
                 left: 0;
                 font-size: @article-title-size;
@@ -157,32 +117,19 @@
                 color: lighten(@grey-color, 20%);
             }
         }
-        .full-width {
+        .full-width,.highlight{
             margin-left: -1.5* @gap;
             margin-right: -1.5* @gap;
-            width:~"calc(100% + @{gap}*3)"
-        }
-        .auto-padding {
             padding-left: 1.5* @gap;
             padding-right: 1.5* @gap;
+            width:~"calc(100% + 3 * @{gap})";
         }
-        img,
-        .highlight {
-            margin-left: -1.5* @gap;
-            margin-right: -1.5* @gap;
-            width:~"calc(100% + @{gap}*3)";
-            max-width: none;
-        }
-        img{
-            -o-object-fit: cover;
-            object-fit: cover;
+        img {
+            max-width: 100%;
         }
     }
     @media(max-width:@on-phone) {
+        padding-right: 0;
         .mobile-post();
-        .post,
-        .banner {
-            &:extend(.z-depth-0);
-        }
     }
 }

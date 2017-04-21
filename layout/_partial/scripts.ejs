@@ -31,11 +31,6 @@
   var SEARCH_SERVICE = "<%- theme.search.service %>";
   var ROOT = "<%- config.root %>"||"/";
   if(!ROOT.endsWith('/'))ROOT += '/';
-  var BANNER_IMAGE = "<%- theme.banner.image %>" == "true";
-  var BANNER_HITOKOTO = "<%- theme.banner.hitokoto %>" == "true";
-  var BANNER_TITLE = "<%- config.subtitle %>"||"<%- config.title %>";
-  var BANNER_CUSTOMIMAGE = "<%- theme.banner.customimage %>" == "true";
-  var BANNER_IMAGELIST = "<%- theme.banner.imagelist %>".split(',');
 </script>
 <%- js('js/search.js') %>
 <%- js('js/app.js') %>

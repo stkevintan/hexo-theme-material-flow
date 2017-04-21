@@ -1,19 +1,15 @@
 <% if (is_tag()) { %>
-	<section class="page-header tag banner waves-image">
-    <h1>Tag : <span><%= page.tag %></span></h1>
-  </section>
+  <script>
+    window.subData= { title:'Tag : <%= page.tag %>'}
+  </script>
 <% } else if (is_archive()) { %>
-	<section class="page-header archive banner waves-image">
-    <h1>Year : <span><%= page.year %><%= page.month ? '.' + page.month : '' %></span></h1>
-  </section>
+  <script>
+    window.subData= { title:'Year : <%= page.year %><%= page.month ? '.' + page.month : '' %>'}
+  </script>
 <% } else if (is_category()) { %>
-	<section class="page-header category banner waves-image">
-    <h1>Category : <span><%= page.category %></span></h1>
-  </section>
-<% } else { %>
-  <section class="page-header category banner waves-image">
-    <h1 id='hitokoto'></h1>
-  </section>
+  <script>
+    window.subData= { title:'Category : <%= page.category %>'}
+  </script>
 <% } %>
 <section class="post-list">
 	<% page.posts.each(function(post){ %>

@@ -52,11 +52,13 @@
     }
     .content{
         padding:0;
-        #hitokoto{
+        .desc{
             position: relative;
             padding: @gap;
             background:@qoute-background-color;
             .enable-trans(.15s);
+            line-height: 1.2em;
+            font-style: italic;
             &:before{
                 content:'';
                 position: absolute;

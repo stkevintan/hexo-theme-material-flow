@@ -260,7 +260,32 @@
   border: 1px solid #ccc;
   padding: 10px;
   .gutter{
-    color: #fff;
-    padding-right: 8px;
+    color: #999999;
+    padding-right: 20px;
+    text-align: right;
   }
+  .code{
+      vertical-align: top;
+  }
+  &::-webkit-scrollbar { 
+    height: 6px;
+    width: 6px;
+  }
+  // /* Track */
+
+&::-webkit-scrollbar-track-piece {
+background: transparent;
+}
+
+
+/* Handle */
+
+&::-webkit-scrollbar-thumb {
+background: #ccc;
+cursor: pointer;
+transition: all .2s ease-out;
+&:hover {
+background: darken(#ccc, 10%);
+}
+}
 }

@@ -1,0 +1,48 @@
+.toc-wrapper{
+  position:fixed;
+  top: @header-height + @gap * 2;
+  right: 50%;
+  margin-right: -@container-width/2;
+  transition: all .24s ease-out;
+  // prevent toc is too heigh.
+  overflow: auto;
+  max-height: ~"calc(100% - @{header-height} - 2 * @{gap})";
+  @media(max-width: @container-width){
+    right: 0;
+    margin-right:0;
+  }
+
+  @media(max-width: @on-phone){
+    right: 3px - @side-width;
+    margin-right:0;
+    &.active{
+      transform: translateX(-@side-width);
+    }
+  }
+
+  width: @side-width;
+  z-index:3;
+  &:extend(.z-depth-2);
+  padding: @gap;
+  border-left: 3px solid @secondary-color;
+  background: @white;
+  a {
+    display: inline-block;
+    &:hover,&:active,&.active{
+      color: @accent-color;
+    }
+  } 
+  ol{
+    &.toc-child{
+      padding-left: @gap;
+    }
+    li{
+      list-style:none;
+      width: auto;
+      &:extend(.txt-ellipsis);
+    }
+  }
+  &:empty{
+    display:none;
+  }
+}
