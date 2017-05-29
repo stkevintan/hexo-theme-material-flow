@@ -26,6 +26,8 @@
       <%})%>
 	  </div>
     <% } %>
+		
+	<% if(post.prev || post.next){ %>
 		<div class="art-item-footer">
 				<% if(post.prev){ %>
 					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>上一篇：<a href="<%=url_for(post.prev.path)%>" rel="prev"  title="<%=post.prev.title%>">
@@ -38,6 +40,7 @@
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				<%} %>
 		</div>
+	<%} %>
 	</section>
 	<% if (post.comments && config.disqus_shortname){ %>
 		<section id="comments">
