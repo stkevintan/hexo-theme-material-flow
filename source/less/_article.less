@@ -289,12 +289,25 @@ background: darken(#ccc, 10%);
 }
 }
 }
+
 .art-item-footer{
-    height: 30px;
+    height: 40px;
+    line-height: 40px;
+    .art-item-left,.art-item-right{        
+        width:50%;
+        height: 40px;
+        line-height: 40px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
     .art-item-left{
-        float: left;
+        float: left;    
+        text-align: left;
     }
     .art-item-right{
+        width:50%;
         float: right;
+        text-align: right;
     }
 }
