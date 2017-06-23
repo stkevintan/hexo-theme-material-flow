@@ -30,12 +30,12 @@
 	<% if(post.prev || post.next){ %>
 		<div class="art-item-footer">
 				<% if(post.prev){ %>
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>上一篇：<a href="<%=url_for(post.prev.path)%>" rel="prev"  title="<%=post.prev.title%>">
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="<%=url_for(post.prev.path)%>" rel="prev"  title="<%=post.prev.title%>">
 						<%= post.prev.title %> 
 					</a></span>
 				<% } %>
 				<% if(post.next){ %>
-					<span class="art-item-right">下一篇：<a href="<%=url_for(post.next.path) %>" rel="next"  title="<%=post.next.title %>">
+					<span class="art-item-right">next：<a href="<%=url_for(post.next.path) %>" rel="next"  title="<%=post.next.title %>">
 						<%=post.next.title  %>
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				<%} %>
