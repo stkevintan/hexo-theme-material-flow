@@ -1,6 +1,7 @@
 # Material Flow
 
-__由于本人将博客系统转到hugo上，本Hexo主题将不再维护__ 推荐使用我为hugo写的新主题： [YAMT](https://github.com/stkevintan/sfork)
+__由于本人将博客系统转到hugo上，本Hexo主题将只进行bug修复__   
+安利一发我为hugo写的相同风格的主题： [YAMT](https://github.com/stkevintan/sfork)
 
 
 Yet Another Material-Design-Style Hexo Theme.[DEMO](https://kntan.coding.me/kntan/)  
